@@ -14,10 +14,10 @@ public class File {
         this.name = name;
         this.extension = extension;
         this.size = size;
-        this.folder = new ArrayList<>();
+        this.folder = folder;
     }
 
-    public User() {
+    public File() {
 
     }
 
