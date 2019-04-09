@@ -34,7 +34,7 @@ public class User {
         this.name = newName;
     }
 
-    public List<Folder> getFolder() {
+    public List<Folder> getFolders() {
         return this.folders;
     }
 
