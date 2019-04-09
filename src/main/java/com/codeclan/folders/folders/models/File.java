@@ -1,13 +1,29 @@
 package com.codeclan.folders.folders.models;
 
-import java.util.ArrayList;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "files")
 public class File {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column
     private String name;
+
+    @Column
     private String extension;
+
+    @Column
     private int size;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "folder_id", nullable = false)
     private Folder folder;
 
     public File(String name, String extension, int size, Folder folder) {
